@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/conatraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_"
+    tools:context=".GameActivity">
+
+    <ImageView
+        android:id="@+id/imageViewBird"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bird" />
+
+    <TextView
+        android:id="@+id/textViewStartInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="150dp"
+        android:text=" Tap To Play Game"
+        android:textAlignment="center"
+        android:textColor="#3D25F6"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewCoin"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/coin"
+        tools:layout_editor_absoluteX="621dp" />
+
+    <ImageView
+        android:id="@+id/imageViewCoin2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/coin"
+        tools:layout_editor_absoluteX="621dp"
+        tools:layout_editor_absoluteY="76dp" />
+
+    <ImageView
+        android:id="@+id/imageViewEnemy1"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/enem1"
+        tools:layout_editor_absoluteX="621dp"
+        tools:layout_editor_absoluteY="142dp" />
+
+    <ImageView
+        android:id="@+id/imageViewEnemy2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/enem2"
+        tools:layout_editor_absoluteX="621dp"
+        tools:layout_editor_absoluteY="202dp" />
+
+    <ImageView
+        android:id="@+id/imageViewEnemy3"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/enem3"
+        tools:layout_editor_absoluteX="621dp"
+        tools:layout_editor_absoluteY="262dp" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="9dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/coin" />
+
+    <TextView
+        android:id="@+id/textViewScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:text="0"
+        android:textColor="#EF2121"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/imageView7"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/right1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/health_icon" />
+
+    <ImageView
+        android:id="@+id/right2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/right1"
+        app:layout_constraintStart_toStartOf="@+id/right3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/health_icon" />
+
+    <ImageView
+        android:id="@+id/right3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="216dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/textViewScore"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/health_icon" />
+</androidx.constraintlayout.widget.ConstraintLayout>
