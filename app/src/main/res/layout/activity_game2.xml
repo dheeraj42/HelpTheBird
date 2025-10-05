@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Left Controls -->
+    <LinearLayout
+        android:id="@+id/leftControls"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        android:weightSum="3">
+
+        <Button
+            android:id="@+id/btnUpLeft"
+            android:background="@drawable/button_up_background"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="1"
+            android:text="▲"/>
+
+        <Button
+            android:id="@+id/btnLeft"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:background="@drawable/button_left_background"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="1"
+            android:text="◀"/>
+
+        <Button
+            android:id="@+id/btnDownLeft"
+            android:background="@drawable/button_down_background"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:text="▼" />
+    </LinearLayout>
+
+    <!-- Game Area -->
+    <com.example.birdgame.GameView
+        android:id="@+id/gameView"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/leftControls"
+        app:layout_constraintEnd_toStartOf="@id/rightControls"/>
+
+    <!-- Right Controls -->
+    <LinearLayout
+        android:id="@+id/rightControls"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        android:weightSum="3">
+
+        <Button
+            android:id="@+id/btnUpRight"
+            android:background="@drawable/button_up_background"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="1"
+            android:text="▲"/>
+
+        <Button
+            android:id="@+id/btnRight"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:background="@drawable/button_left_background"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="1"
+            android:text="▶"/>
+
+        <Button
+            android:id="@+id/btnDownRight"
+            android:background="@drawable/button_down_background"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:text="▼"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

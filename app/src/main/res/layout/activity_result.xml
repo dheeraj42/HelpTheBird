@@ -3,65 +3,356 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:background="#C3D5BB"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ResultActivity">
 
-    <TextView
-        android:id="@+id/textViewHighestScore"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Highest Score : 200"
-        android:textColor="@color/blue"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonAgain"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewMyScore"
-        app:layout_constraintVertical_bias="0.5" />
+    <!-- Banner Ad Placeholder -->
 
-    <TextView
-        android:id="@+id/textViewMyScore"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Your Score : 50"
-        android:textColor="@color/blue"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/textViewHighestScore"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewResultInfo"
-        app:layout_constraintVertical_bias="0.5" />
-
-    <TextView
-        android:id="@+id/textViewResultInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cogratulations"
-        android:textColor="@color/blue"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/textViewMyScore"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
-
-    <Button
-        android:id="@+id/buttonAgain"
+    <View
+        android:id="@+id/adViewBannerTop"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="75dp"
-        android:background="@drawable/button_again_background"
-        android:text="Play Again"
-        android:textAllCaps="false"
-        android:textColor="@color/red"
-        android:textSize="34sp"
+        android:layout_height="85dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/layoutInfo"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/adViewBannerTop"
+        app:layout_constraintBottom_toTopOf="@id/layoutButtons">
+
+
+        <TextView
+            android:id="@+id/textViewResultInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Congratulations..."
+            android:textColor="@color/blue"
+            android:textSize="24sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/textViewMyScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Score : 50"
+            android:textColor="@color/blue"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/textViewHighestScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Highest Score : 200"
+            android:textColor="@color/blue"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/textViewRequiredScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="You require X more score to Unlock Next Level"
+            android:textColor="#DC1226"
+            android:textStyle="bold"
+            android:textSize="26sp"/>
+
+
+
+    </LinearLayout>
+
+    <!-- Horizontal layout for buttons -->
+    <LinearLayout
+        android:id="@+id/layoutButtons"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutInfo">
+
+        <Button
+            android:id="@+id/buttonAgain"
+            android:layout_width="24dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_again_background"
+            android:text="Play Again"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/buttonQuit"
+            android:layout_width="24dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="35dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_quit_background"
+            android:text="Quit Game"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:id="@+id/main"-->
+<!--    android:background="#A6A9A2"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    tools:context=".ResultActivity">-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textViewHighestScore"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Highest Score : 200"-->
+<!--        android:textColor="@color/blue"-->
+<!--        android:textSize="28sp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/textViewRequiredScore"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.498"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textViewMyScore"-->
+<!--        app:layout_constraintVertical_bias="0.1" />-->
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/textViewMyScore"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Your Score : 50"-->
+<!--        android:textColor="@color/blue"-->
+<!--        android:textSize="28sp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/textViewHighestScore"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textViewResultInfo" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textViewResultInfo"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:text="Cogratulations..."-->
+<!--        android:textColor="@color/blue"-->
+<!--        android:textSize="28sp"-->
+<!--        android:textStyle="italic"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/textViewMyScore"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.506"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    &lt;!&ndash; NEW: Required Score Box &ndash;&gt;-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textViewRequiredScore"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="You require X more score to get your reward"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="20sp"-->
+<!--        android:visibility="gone"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/textViewRewardPoints"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent" />-->
+
+<!--    &lt;!&ndash; NEW: Reward Points Box &ndash;&gt;-->
+<!--    <TextView-->
+<!--        android:id="@+id/textViewRewardPoints"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Total Reward: 0"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="20sp"-->
+<!--        android:visibility="gone"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/layoutButtons"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent" />-->
+
+<!--    &lt;!&ndash; Horizontal layout for buttons &ndash;&gt;-->
+<!--    <LinearLayout-->
+<!--        android:id="@+id/layoutButtons"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_marginStart="50dp"-->
+<!--        android:layout_marginEnd="50dp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/adViewBanner"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent">-->
+
+<!--        <Button-->
+<!--            android:id="@+id/buttonAgain"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_marginEnd="10dp"-->
+<!--            android:background="@drawable/button_again_background"-->
+<!--            android:text="Play Again"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="@color/red"-->
+<!--            android:textSize="24sp" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/buttonQuit"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:background="@drawable/button_again_background"-->
+<!--            android:text="Quit Game"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="@color/red"-->
+<!--            android:textSize="24sp" />-->
+<!--    </LinearLayout>-->
+
+<!--    &lt;!&ndash; Banner Ad Placeholder &ndash;&gt;-->
+<!--    <View-->
+<!--        android:id="@+id/adViewBanner"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:background="@color/black"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent" />-->
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+
+
+
+
+<!--    <?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:id="@+id/main"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    tools:context=".ResultActivity">-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textViewHighestScore"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Highest Score : 200"-->
+<!--        android:textColor="@color/blue"-->
+<!--        android:textSize="34sp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/layoutButtons"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textViewMyScore"-->
+<!--        app:layout_constraintVertical_bias="0.5" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textViewMyScore"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Your Score : 50"-->
+<!--        android:textColor="@color/blue"-->
+<!--        android:textSize="34sp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/textViewHighestScore"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.494"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textViewResultInfo"-->
+<!--        app:layout_constraintVertical_bias="0.5" />-->
+
+<!--    &lt;!&ndash; Horizontal layout for Play Again and Quit Game buttons &ndash;&gt;-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textViewResultInfo"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Cogratulations"-->
+<!--        android:textColor="@color/blue"-->
+<!--        android:textSize="34sp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/textViewMyScore"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.5" />-->
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/layoutButtons"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_marginStart="50dp"-->
+<!--        android:layout_marginEnd="50dp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/adViewBanner"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent">-->
+
+<!--        <Button-->
+<!--            android:id="@+id/buttonAgain"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_marginEnd="10dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="@drawable/button_again_background"-->
+<!--            android:text="Play Again"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="@color/red"-->
+<!--            android:textSize="24sp" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/buttonQuit"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:background="@drawable/button_again_background"-->
+<!--            android:text="Quit Game"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="@color/red"-->
+<!--            android:textSize="24sp" />-->
+<!--    </LinearLayout>-->
+
+<!--    &lt;!&ndash; Placeholder for Banner Ad &ndash;&gt;-->
+<!--    <View-->
+<!--        android:id="@+id/adViewBanner"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:background="@color/black"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent" />-->
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
